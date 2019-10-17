@@ -5,12 +5,17 @@
 ddns use coredns etcd api
 '''
 import hashlib
+import logging
+import logging.config
 
 from flask import Flask, render_template, request
 from flask_httpauth import HTTPBasicAuth
 from flask_restful import Api, Resource, abort, reqparse
 
 from etcdc import etcdc
+
+logging.config.fileConfig('conf/logging.conf')
+logger = logging.getLogger(__name__)
 
 auth = HTTPBasicAuth()
 
@@ -61,4 +66,4 @@ def create_app(config, name=__name__):
 
 
 if __name__ == '__main__':
-    create_app('application.cfg')
+    create_app('conf/application.cfg')

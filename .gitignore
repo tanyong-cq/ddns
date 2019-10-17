@@ -1,5 +1,4 @@
 venv/
-certs/
 .vscode/
 
 *.pyc
@@ -11,6 +10,8 @@ instance/
 .coverage
 htmlcov/
 
+conf/certs/
 dist/
 build/
+log/
 *.egg-info/
